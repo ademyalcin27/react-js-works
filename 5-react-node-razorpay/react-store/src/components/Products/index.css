@@ -1,0 +1,9 @@
+.product-container {
+    display: flex;
+    justify-content:space-between;
+}
+.product-container__item {
+    border: 1px solid orange;
+    padding: 20px;
+    margin: 10px;
+}
