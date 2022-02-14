@@ -56,7 +56,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({onChange, initialValue}) => {
             <MonacoEditor 
                 editorDidMount={onEditorDidMount}
                 value={initialValue}
-                height="500px" 
+                height="100%" 
                 theme="dark" 
                 language="javascript" 
                 options={{
@@ -68,7 +68,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({onChange, initialValue}) => {
                     fontSize: 16,
                     scrollBeyondLastLine: false,
                     automaticLayout: true,
-                }} />;
+                }} />
         </div>
         )
 }
