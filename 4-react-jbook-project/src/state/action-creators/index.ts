@@ -38,5 +38,3 @@ export const insertCellBefore = (id: string, cellType: CellTypes ): InsertCellBe
         }
     }
 }
-
-export default {}
