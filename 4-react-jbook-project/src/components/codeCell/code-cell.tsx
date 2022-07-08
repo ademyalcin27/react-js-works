@@ -19,7 +19,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
             const output = await bundle(cell.content);
             setCode(output.code);
             setErr(output.err);
-        }, 500);
+        }, 750);
         return () => {
             clearTimeout(timer)
         }
@@ -27,7 +27,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
 
     
     return <Resizable direction='vertical'>
-        <div style={{height: '100%', display: 'flex', flexDirection: 'row'}}>
+        <div style={{height: 'calc(100% - 10px)', display: 'flex', flexDirection: 'row'}}>
             <Resizable direction='horizontal'>
                 <CodeEditor 
                     initialValue={cell.content}

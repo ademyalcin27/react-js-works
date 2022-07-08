@@ -1,5 +1,4 @@
 import produce from 'immer';
-// import { updateCell, deleteCell, moveCell, insertCellBefore } from '../action-creators'
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 import { Cell } from '../cell'
@@ -43,7 +42,7 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
           state.order[targetIndex] = id;
 
           return state;
-      case ActionType.INSERT_CELL_BEFORE:
+      case ActionType.INSERT_CELL_AFTER:
           const cell: Cell = {
               content: '',
               type: action.payload.type,
@@ -53,11 +52,11 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
           state.data[cell.id] = cell;
           const orderIndex = state.order.findIndex(orderId => orderId === action.payload.id);
           if(orderIndex < 0) {
-              state.order.push(cell.id);
+              state.order.unshift(cell.id);
               return state;
           }
 
-          state.order.splice(orderIndex, 0, cell.id);
+          state.order.splice(orderIndex + 1, 0, cell.id);
           return state;
       default:
         return state;
