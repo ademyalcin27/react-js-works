@@ -40,7 +40,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "serve": "node local-api.js"
   },
   "eslintConfig": {
     "extends": [
